@@ -5,3 +5,5 @@ __pycache__/
 .env
 data.csv
 data.xlsx
+*.ipynb_checkpoints/
+.ipynb_checkpoints/
