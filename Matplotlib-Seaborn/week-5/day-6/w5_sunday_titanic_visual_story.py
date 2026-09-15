@@ -35,3 +35,51 @@ if result == 0:
     print("No null values in Name — go ahead!")
 else:
     print("Stop — nulls found, recheck this column")
+print("strip applied successfully")
+# alternative method for rare names,upload csv to ai tool,tool will give you names,
+# then replace it throgh pandas .replacw( method)
+df["Title"] = df["Name"].str.extract(r",\s*([^.]*)\.")
+df["Title"] = df["Title"].str.strip()
+print("strip applied successfully")
+
+df["Title"] = df["Title"].replace(
+    ["Capt", "Col", "Don", "Dr", "Jonkheer",
+     "Lady", "Major", "Rev", "Sir", "Countess", "the Countess"],
+    "Rare"
+)
+
+df["Title"] = df["Title"].replace(["Mlle", "Ms"], "Miss")
+df["Title"] = df["Title"].replace("Mme", "Mrs")
+
+
+# sex analysis
+print(df['Sex'].isnull().sum())
+print(df["Sex"].head(11))
+print(df["Sex"].value_counts())
+
+# passeneger class vs sex
+
+print(df["Passenger_class"].head(11))
+print(df.groupby(['Passenger_class','Sex']).size())
+
+# age analysis
+
+print(df['Age'].isnull().sum())
+df["Age"]=df["Age"].fillna(df["Age"].mean())
+print(df['Age'].isnull().sum())
+
+# sibling and spouse ,parch
+df.rename(columns={'SibSp':'horizontal_family'},inplace=True)
+print("Updated columns list:\n", df.columns)
+df.rename(columns={'Parch':'vertical_family'},inplace=True)
+print("Updated columns list:\n", df.columns)
+
+# ticket
+print(df['Ticket'].isnull().sum())
+# fare
+print(df['Fare'].isnull().sum())
+# cabin
+print(df['Cabin'].value_counts())
+print(df['Cabin'].isnull().sum())
+df=df.drop(columns=["Cabin"])
+print("Updated columns list:\n", df.columns)
