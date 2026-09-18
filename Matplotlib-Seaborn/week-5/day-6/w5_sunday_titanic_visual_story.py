@@ -1,4 +1,7 @@
 import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
 df.to_csv("titanic_raw.csv", index=False)
@@ -83,3 +86,27 @@ print(df['Cabin'].value_counts())
 print(df['Cabin'].isnull().sum())
 df=df.drop(columns=["Cabin"])
 print("Updated columns list:\n", df.columns)
+# embarked analysis
+print(df['Embarked'].isnull().sum())
+print(df["Embarked"].head(11))
+df["Embarked"]=df["Embarked"].fillna(df["Embarked"].mode()[0])
+print(df['Embarked'].isnull().sum())
+
+# deep analysis
+
+df['family_size'] = df['horizontal_family'] + df['vertical_family']
+print(df["family_size"].head(6))
+print("Updated columns list:\n", df.columns)
+# visual
+value_counts=df['family_size'].value_counts()
+plt.figure(figsize=(10, 6))
+plt.title("Family Size Analysis")
+sns.countplot(data=df, x='family_size', color="#E01B1B")
+plt.xlabel("Family Size")
+plt.ylabel("value_counts")
+plt.show()
+
+
+
+
+
