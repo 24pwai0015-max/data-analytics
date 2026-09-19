@@ -93,18 +93,75 @@ df["Embarked"]=df["Embarked"].fillna(df["Embarked"].mode()[0])
 print(df['Embarked'].isnull().sum())
 
 # deep analysis
-
-df['family_size'] = df['horizontal_family'] + df['vertical_family']
+df['family_size'] = df['horizontal_family'] + df['vertical_family'] + 1
+# df['family_size'] = df['horizontal_family'] + df['vertical_family']
 print(df["family_size"].head(6))
 print("Updated columns list:\n", df.columns)
 # visual
-value_counts=df['family_size'].value_counts()
 plt.figure(figsize=(10, 6))
 plt.title("Family Size Analysis")
 sns.countplot(data=df, x='family_size', color="#E01B1B")
 plt.xlabel("Family Size")
-plt.ylabel("value_counts")
+plt.ylabel("Count")
 plt.show()
+
+# 1. What was the overall survival rate? (pie or bar)
+rate=df["Survived"].mean()*100
+print(rate)
+
+survivial_counts=df["Survived"].value_counts()
+print(survivial_counts)
+
+plt.pie(survivial_counts,labels=
+        ['didnt survived','survived'],
+        autopct='%1.1f%%',
+        startangle=90)
+plt.title('survuval rate')
+plt.show()
+
+# survival by age
+
+df["AgeGroup"] = pd.cut(
+    df["Age"],
+    bins=[0, 12, 18, 35, 60, 100],
+    labels=["Child", "Teen", "Young Adult", "Adult", "Senior"]
+)
+print("Updated columns list:\n", df.columns)
+
+age_survival=df.groupby('AgeGroup',observed=True)['Survived'].mean()*100
+print(age_survival)
+plt.title("survival by age")
+age_survival.plot(kind="bar")
+plt.xlabel('Age group')
+plt.ylabel('survival rate')
+plt.grid(True,alpha=0.5)
+plt.show()
+
+# survival by class
+
+class_survival=df.groupby('Passenger_class',observed=True)['Survived'].mean()*100
+print(class_survival)
+plt.title("survival by class")
+class_survival.plot(kind="bar")
+plt.xlabel('class')
+plt.ylabel('survival rate')
+plt.grid(True,alpha=0.5)
+plt.show()
+
+
+# survival by sex
+
+sex_survival=df.groupby('Sex',observed=True)['Survived'].mean()*100
+print(sex_survival)
+plt.title("survival by sex")
+sex_survival.plot(kind="bar")
+plt.xlabel('sex')
+plt.ylabel('survival rate')
+plt.grid(True,alpha=0.5)
+plt.show()
+
+
+
 
 
 
