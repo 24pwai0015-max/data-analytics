@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b16" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="glowCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f5ff" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="glowPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="glowPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#db2777" />
+    </linearGradient>
+    <linearGradient id="glowGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .metric-value { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 26px; font-weight: 900; }
+    .metric-label { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 700; fill: #94a3b8; letter-spacing: 1.5px; text-transform: uppercase; }
+  </style>
+
+  <!-- Card 1 -->
+  <g transform="translate(0, 0)">
+    <rect width="210" height="96" rx="12" fill="url(#cardBg)" stroke="#00f5ff" stroke-width="1.2" stroke-opacity="0.5" />
+    <text x="22" y="44" class="metric-value" fill="url(#glowCyan)">05 WEEKS</text>
+    <text x="22" y="70" class="metric-label">Structured Syllabus</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g transform="translate(230, 0)">
+    <rect width="210" height="96" rx="12" fill="url(#cardBg)" stroke="#c084fc" stroke-width="1.2" stroke-opacity="0.5" />
+    <text x="22" y="44" class="metric-value" fill="url(#glowPurple)">25+ LABS</text>
+    <text x="22" y="70" class="metric-label">Scripts &amp; Mini-Projects</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g transform="translate(460, 0)">
+    <rect width="210" height="96" rx="12" fill="url(#cardBg)" stroke="#f472b6" stroke-width="1.2" stroke-opacity="0.5" />
+    <text x="22" y="44" class="metric-value" fill="url(#glowPink)">4 ENGINES</text>
+    <text x="22" y="70" class="metric-label">NumPy • Pandas • Plt • Sns</text>
+  </g>
+
+  <!-- Card 4 -->
+  <g transform="translate(690, 0)">
+    <rect width="210" height="96" rx="12" fill="url(#cardBg)" stroke="#34d399" stroke-width="1.2" stroke-opacity="0.5" />
+    <text x="22" y="44" class="metric-value" fill="url(#glowGreen)">100% REAL</text>
+    <text x="22" y="70" class="metric-label">End-to-End Datasets</text>
+  </g>
+</svg>
