@@ -1,23 +1,23 @@
 <div align="center">
 
-  <img src="assets/banner.svg" alt="High Voltage Data Analytics Banner" width="100%" />
+  <img src="assets/banner.svg" alt="High Voltage Light Amber & White Banner" width="100%" />
 
   <br/><br/>
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&pause=1200&color=00F0FF&background=0D111700&center=true&vCenter=true&width=750&lines=%E2%9A%A1+DATA+ANALYTICS+%26+VISUAL+STORYTELLING;%F0%9F%94%A5+NUMPY+%E2%80%A2+PANDAS+%E2%80%A2+MATPLOTLIB+%E2%80%A2+SEABORN;%F0%9F%93%8A+PRODUCTION-GRADE+EDA+%26+STATISTICAL+PIPELINES;%F0%9F%9A%80+REAL-WORLD+DATASETS+%7C+TITANIC+%E2%80%A2+WINE+QUALITY" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&pause=1200&color=D97706&background=0D111700&center=true&vCenter=true&width=750&lines=%E2%9A%A1+DATA+ANALYTICS+%26+VISUAL+STORYTELLING;%F0%9F%8F%86+PROFESSIONAL+LIGHT+AMBER+%26+WHITE+UI;%F0%9F%94%A5+NUMPY+%E2%80%A2+PANDAS+%E2%80%A2+MATPLOTLIB+%E2%80%A2+SEABORN;%F0%9F%93%8A+PRODUCTION-GRADE+EDA+%26+STATISTICAL+PIPELINES;%F0%9F%9A%80+FULL+TITANIC+VISUAL+STORY+%7C+WINE+QUALITY" alt="Typing SVG" />
   </a>
 
   <br/>
 
-  <!-- Badges -->
+  <!-- High-End Amber & Slate Badges -->
   <p align="center">
-    <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.12" />
-    <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=00F5FF" alt="NumPy" />
-    <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=A855F7" alt="Pandas" />
-    <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=EC4899" alt="Matplotlib" />
-    <img src="https://img.shields.io/badge/Seaborn-38BDF8?style=for-the-badge&logo=seaborn&logoColor=050811" alt="Seaborn" />
-    <img src="https://img.shields.io/badge/Status-Active%20Lab-10B981?style=for-the-badge" alt="Status" />
+    <img src="https://img.shields.io/badge/Python-3.12-F59E0B?style=for-the-badge&logo=python&logoColor=white&labelColor=1E293B" alt="Python 3.12" />
+    <img src="https://img.shields.io/badge/NumPy-Vectorized-D97706?style=for-the-badge&logo=numpy&logoColor=white&labelColor=1E293B" alt="NumPy" />
+    <img src="https://img.shields.io/badge/Pandas-Wrangling-B45309?style=for-the-badge&logo=pandas&logoColor=white&labelColor=1E293B" alt="Pandas" />
+    <img src="https://img.shields.io/badge/Matplotlib-Canvas-F59E0B?style=for-the-badge&logo=python&logoColor=white&labelColor=1E293B" alt="Matplotlib" />
+    <img src="https://img.shields.io/badge/Seaborn-Statistical-D97706?style=for-the-badge&logo=seaborn&logoColor=white&labelColor=1E293B" alt="Seaborn" />
+    <img src="https://img.shields.io/badge/Status-Maintained-10B981?style=for-the-badge&labelColor=1E293B" alt="Status" />
   </p>
 
 </div>
@@ -31,17 +31,15 @@
 <br/>
 
 > **Welcome to the Data Analytics & Scientific Computing Laboratory.**  
-> A high-voltage, production-oriented repository engineered to bridge raw tabular data, vectorized matrix algebra, robust data cleaning pipelines, and publication-ready visual storytelling.
+> A high-voltage, production-oriented workspace designed with a minimalist **Light Amber & Porcelain White** executive aesthetic. Bridging raw datasets, vectorized matrix algorithms, robust wrangling pipelines, and publication-ready visual storytelling.
 
 ---
 
-## ⚡ Data Pipeline & Architecture
+## ⚡ Data Pipeline & Lifecycle Architecture
 
 <div align="center">
   <img src="assets/pipeline.svg" alt="Data Analytics Lifecycle" width="100%" />
 </div>
-
-The architecture decomposes full-cycle exploratory analysis into five interconnected execution stages:
 
 ```mermaid
 flowchart LR
@@ -50,30 +48,35 @@ flowchart LR
     C --> D["📊 Visual Engines<br/>(Matplotlib & Seaborn)"]
     D --> E["🎯 Visual Stories<br/>(Actionable Insights)"]
 
-    classDef stage fill:#070b16,stroke:#00f5ff,stroke-width:1.5px,color:#e2e8f0;
-    class A,B,C,D,E stage;
+    classDef amberStage fill:#FFFBEB,stroke:#F59E0B,stroke-width:1.8px,color:#78350F;
+    class A,B,C,D,E amberStage;
 ```
 
 ---
 
 ## 🎨 Visual Showcase & Exploratory Case Studies
 
-### 🚢 The Titanic Visual Story (`Week 5 / Day 6`)
-A comprehensive, end-to-end demographic and survival analysis extracted from the historical Titanic passenger manifest.
+### 🚢 The Complete Titanic Visual Story (`Week 5 / Day 6`)
+An end-to-end demographic, behavioral, and survival narrative synthesized through **9 distinct statistical and visual inquiries**.
 
 <div align="center">
-  <img src="pandas/titanic_eda.png" alt="Titanic Exploratory Data Analysis" width="95%" style="border-radius: 12px; border: 1.5px solid #1e293b; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
+  <img src="pandas/titanic_eda.png" alt="Titanic Exploratory Data Analysis" width="95%" style="border-radius: 12px; border: 1.5px solid #FDE68A; box-shadow: 0 10px 30px rgba(180, 83, 9, 0.08);" />
 </div>
 
 <br/>
 
-#### 🔍 Key Analytic Takeaways
-| Feature Dimension | Key Metric / Pattern | Analytical Significance |
+#### 🔍 9-Stage Titanic Visual Story Inquiries
+| Inquirer | Visualization Technique | Core Analytical Finding |
 | :--- | :--- | :--- |
-| **Gender Disparity** | **74.2% Female** vs **18.9% Male** survival | Massive empirical evidence of maritime protocol (*"Women and children first"*). |
-| **Socioeconomic Class** | **Class 1 (63%)** > **Class 2 (47%)** > **Class 3 (24%)** | Proximity to boat decks and socioeconomic hierarchy heavily dictated survival odds. |
-| **Family Dynamics** | `family_size = horizontal + vertical + 1` | Small families (2–4 members) had highest survival; solo passengers and large families suffered high mortality. |
-| **Age Demographics** | Binned `pd.cut` (Child, Teen, Young Adult, Adult, Senior) | Children under 12 exhibited high survival rescue priority across all passenger classes. |
+| **1. Overall Survival Rate** | Matplotlib `pie()` chart | **~38.4% survived** vs **61.6% deceased** across 891 recorded passengers. |
+| **2. Survival by Age Group** | `pd.cut` + Grouped `bar()` | **Children (<12)** had highest survival priority; **Seniors (60+)** had lowest survival. |
+| **3. Socioeconomic Class** | Seaborn `barplot()` | **1st Class (63%)** > **2nd Class (47%)** > **3rd Class (24%)** survival gradient. |
+| **4. Gender Impact** | Seaborn `countplot(hue='Sex')` | Female survival (~74%) vastly outpaced male survival (~19%) (*"Women and children first"*). |
+| **5. Age Distribution** | Stacked `histplot(multiple='stack')` | Highlights demographic vulnerability among young adult males aged 18–35. |
+| **6. Family Size Dynamics** | `family_size` + Color Bar Plot | Small families (2–4 members) achieved optimal survival; solo and large families (>5) suffered. |
+| **7. Fare Distribution by Class**| `pd.cut` + Seaborn `boxplot()` | 1st class passengers paid disproportionately higher fares (up to £512), correlating with survival. |
+| **8. Class $\times$ Gender Matrix** | Pivot Table + Seaborn `heatmap()` | **1st Class Females** achieved near-certain survival (~96.8%), while **3rd Class Males** fell to ~13.5%. |
+| **9. Port Distribution** | Seaborn / Matplotlib `pie()` | Southampton (**S: ~72%**) boarded majority; Cherbourg (**C**) passengers carried higher 1st-class rates. |
 
 ---
 
@@ -114,7 +117,7 @@ Matplotlib-Seaborn/week-5/
 ├── day-3/  ── Multi-Axis Subplot Architecture & Figure Canvas Geometry
 ├── day-4/  ── Seaborn Statistical Distributions, Categorical & Count Plots
 ├── day-5/  ── Integrated Pandas-to-Matplotlib Plotting Workflows
-└── day-6/  ── Titanic Visual Story: Feature Engineering & Demographic Narrative
+└── day-6/  ── Complete 9-Part Titanic Visual Story & Narrative Exploration
 ```
 
 | Day | Key Scripts & Documentation | Highlights |
@@ -124,7 +127,7 @@ Matplotlib-Seaborn/week-5/
 | **Day 3** | [`subplots.py`](Matplotlib-Seaborn/week-5/day-3/subplots.py) • [`tasks.py`](Matplotlib-Seaborn/week-5/day-3/tasks.py) | $2\times 3$ grid arrays, shared axes, figure layout geometry |
 | **Day 4** | [`w5_04_seaborn_basics.py`](Matplotlib-Seaborn/week-5/day-4/w5_04_seaborn_basics.py) • [`notes.md`](Matplotlib-Seaborn/week-5/day-4/notes.md) | Statistical estimation, confidence intervals, `hue` semantics |
 | **Day 5** | [`w5_05_pandas_matplotlib.py`](Matplotlib-Seaborn/week-5/day-5/w5_05_pandas_matplotlib.py) • [`notes.md`](Matplotlib-Seaborn/week-5/day-5/notes.md) | Native `.plot()` integration, cross-tab visualizations |
-| **Day 6** | [`w5_sunday_titanic_visual_story.py`](Matplotlib-Seaborn/week-5/day-6/w5_sunday_titanic_visual_story.py) | 🚢 **Titanic Story:** `family_size`, title grouping, age bins, survival rates |
+| **Day 6** | [`w5_sunday_titanic_visual_story.py`](Matplotlib-Seaborn/week-5/day-6/w5_sunday_titanic_visual_story.py) | 🚢 **9-Part Visual Story:** Age bins, Class/Sex pivot heatmap, stacked distributions, fare boxplot |
 
 ---
 
@@ -167,5 +170,5 @@ python Matplotlib-Seaborn\week-5\day-6\w5_sunday_titanic_visual_story.py
 ---
 
 <div align="center">
-  <sub>Engineered with ⚡ for high-performance data analytics and AI agent automation.</sub>
+  <sub>Designed with ⚡ and a warm Light Amber &amp; White palette for modern data analytics.</sub>
 </div>

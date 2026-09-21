@@ -136,7 +136,7 @@ plt.xlabel('Age group')
 plt.ylabel('survival rate')
 plt.grid(True,alpha=0.5)
 plt.show()
-
+# Did class affect survival? (barplot)
 # survival by class
 
 class_survival=df.groupby('Passenger_class',observed=True)['Survived'].mean()*100
@@ -160,7 +160,99 @@ plt.ylabel('survival rate')
 plt.grid(True,alpha=0.5)
 plt.show()
 
+#  Did gender affect survival? (barplot with hue)
+plt.title("hue sex")
+sns.countplot(data=df,x='Survived',hue='Sex')
+plt.show()
 
+
+# 4. Did age affect survival? (histplot with hue)
+sns.histplot(
+    data=df,
+    x="Age",
+    hue="Survived",
+    bins=20,
+    multiple='stack'
+)
+
+plt.title("Age Distribution by Survival")
+plt.xlabel("Age")
+plt.ylabel("Number of Passengers")
+plt.show()
+# 5. Did family size affect survival? (barplot or boxplot)
+family_size_effect = df.groupby("family_size")["Survived"].mean() * 100
+
+family_size_effect.plot(
+    kind="bar",
+    color="#CDF80A"
+)
+
+plt.title(
+    "Family Size vs Survival",
+    color="#F01212",
+    fontweight="bold",
+    fontsize=16
+)
+
+plt.xlabel("Family Size")
+plt.ylabel("Survival Rate (%)")
+
+plt.show()
+# 6. What was the fare distribution by class? (boxplot)
+df['fare dist']=pd.cut(
+    df["Fare"],
+    bins=[0,10,30,50,100,600],
+    labels=['low','medium','moderate','high','very high']
+)
+
+print("Updated columns list:\n", df.columns)
+
+sns.boxplot(
+    data=df,
+    x="fare dist",
+    y="Passenger_class"
+)
+
+plt.title("Fare Distribution vs Passenger Class")
+plt.xlabel("Fare Category")
+plt.ylabel("Passenger Class")
+
+plt.show()
+# 7. Which combination of class+gender survived most/least? (heatmap)
+class_gender_survival = df.pivot_table(
+    values="Survived",
+    index="Passenger_class",
+    columns="Sex",
+    aggfunc="mean"
+) * 100
+
+sns.heatmap(
+    class_gender_survival,
+    annot=True,
+    fmt=".1f",
+    cmap="YlGnBu"
+    
+)
+
+plt.title("Survival Rate by Class and Gender")
+plt.xlabel("Gender")
+plt.ylabel("Passenger Class")
+
+plt.show()
+# 8. How are passengers distributed across ports? (pie)
+# 8. How are passengers distributed across ports? (pie)
+
+port_counts = df["Embarked"].value_counts()
+
+plt.pie(
+    port_counts,
+    labels=port_counts.index,
+    autopct="%1.1f%%",
+    startangle=90
+)
+
+plt.title("Passenger Distribution Across Ports")
+plt.show()
 
 
 
