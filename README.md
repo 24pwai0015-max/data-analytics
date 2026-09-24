@@ -35,7 +35,7 @@
 
 ---
 
-## ⚡ Data Pipeline & Lifecycle Architecture
+## Data Pipeline & Lifecycle Architecture
 
 <div align="center">
   <img src="assets/pipeline.svg" alt="Data Analytics Lifecycle" width="100%" />
@@ -43,10 +43,10 @@
 
 ```mermaid
 flowchart LR
-    A["📥 Ingestion<br/>(CSV / Excel / APIs)"] --> B["⚡ NumPy Core<br/>(Arrays & Broadcasting)"]
-    B --> C["🐼 Pandas Pipeline<br/>(Wrangling & Feature Eng.)"]
-    C --> D["📊 Visual Engines<br/>(Matplotlib & Seaborn)"]
-    D --> E["🎯 Visual Stories<br/>(Actionable Insights)"]
+    A["Ingestion<br/>(CSV / Excel / APIs)"] --> B["NumPy Core<br/>(Arrays & Broadcasting)"]
+    B --> C["Pandas Pipeline<br/>(Wrangling & Feature Eng.)"]
+    C --> D["Visual Engines<br/>(Matplotlib & Seaborn)"]
+    D --> E["Visual Stories<br/>(Actionable Insights)"]
 
     classDef amberStage fill:#FFFBEB,stroke:#F59E0B,stroke-width:1.8px,color:#78350F;
     class A,B,C,D,E amberStage;
@@ -54,9 +54,9 @@ flowchart LR
 
 ---
 
-## 🎨 Visual Showcase & Exploratory Case Studies
+## Visual Showcase & Exploratory Case Studies
 
-### 🚢 The Complete Titanic Visual Story (`Week 5 / Day 6`)
+### The Complete Titanic Visual Story (`Week 5 / Day 6`)
 An end-to-end demographic, behavioral, and survival narrative synthesized through **9 distinct statistical and visual inquiries**.
 
 <div align="center">
@@ -80,9 +80,9 @@ An end-to-end demographic, behavioral, and survival narrative synthesized throug
 
 ---
 
-## 🗺️ Syllabus & Laboratory Directory
+## Syllabus & Laboratory Directory
 
-### 🔹 Week 1 — NumPy Foundations & Vectorized Computing
+### Week 1 — NumPy Foundations & Vectorized Computing
 Mastering multidimensional arrays, memory layout, and vectorized computation without slow Python loops.
 
 | Lab / File | Focus Area | Core Concepts Demonstrated |
@@ -96,7 +96,7 @@ Mastering multidimensional arrays, memory layout, and vectorized computation wit
 
 ---
 
-### 🔹 Weeks 2 to 4 — Pandas Wrangling & Feature Engineering
+### Weeks 2 to 4 — Pandas Wrangling & Feature Engineering
 Transforming messy, incomplete real-world tables into clean, structured analytic dataframes.
 
 | Module | Core Files | Key Techniques |
@@ -107,7 +107,7 @@ Transforming messy, incomplete real-world tables into clean, structured analytic
 
 ---
 
-### 🔹 Week 5 — Visualization Architecture (Matplotlib & Seaborn)
+### Week 5 — Visualization Architecture (Matplotlib & Seaborn)
 Transforming statistical distributions and categorical relationships into high-impact visuals.
 
 ```
@@ -141,18 +141,18 @@ cd data-analytics
 
 ### 2. Activate the Unified Virtual Environment
 
-#### 🔷 Windows PowerShell (Recommended)
+#### Windows PowerShell (Recommended)
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 & ".\venv\Scripts\Activate.ps1"
 ```
 
-#### 🔷 Windows Command Prompt (cmd)
+#### Windows Command Prompt (cmd)
 ```cmd
 venv\Scripts\activate.bat
 ```
 
-#### 🔷 macOS / Linux / Git Bash
+#### macOS / Linux / Git Bash
 ```bash
 source venv/Scripts/activate
 ```
@@ -170,5 +170,5 @@ python Matplotlib-Seaborn\week-5\day-6\w5_sunday_titanic_visual_story.py
 ---
 
 <div align="center">
-  <sub>Designed with ⚡ and a warm Light Amber &amp; White palette for modern data analytics.</sub>
+  <sub>Designed with and a warm Light Amber &amp; White palette for modern data analytics.</sub>
 </div>
