@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 270" width="100%" height="100%">
+  <defs>
+    <style>
+      .mono-title { font-family: 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #111827; letter-spacing: 2px; }
+      .section-heading { font-family: 'Consolas', monospace; font-size: 10px; font-weight: 700; fill: #111827; letter-spacing: 1.5px; }
+      .stat-pct { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 32px; font-weight: 900; fill: #111827; text-anchor: middle; }
+      .stat-sub { font-family: 'Consolas', monospace; font-size: 10px; font-weight: 700; fill: #6B7280; letter-spacing: 1.5px; text-anchor: middle; }
+      .bar-label { font-family: 'Consolas', monospace; font-size: 10px; font-weight: 700; fill: #111827; letter-spacing: 1px; }
+      .note-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-style: italic; fill: #4B5563; }
+      .story-item { font-family: 'Consolas', monospace; font-size: 11px; font-weight: 600; fill: #111827; }
+    </style>
+  </defs>
+
+  <!-- Container Box -->
+  <rect x="10" y="10" width="940" height="250" fill="#FFFFFF" stroke="#111827" stroke-width="1.8" />
+
+  <!-- Top Bar -->
+  <line x1="10" y1="40" x2="950" y2="40" stroke="#111827" stroke-width="1" />
+  <text x="28" y="28" class="mono-title">CASE STUDY / TITANIC SURVIVAL / 891 RECORDS</text>
+
+  <!-- COLUMN 1: Donut Chart -->
+  <g transform="translate(160, 130)">
+    <!-- Background Circle -->
+    <circle cx="0" cy="0" r="58" fill="none" stroke="#E5E7EB" stroke-width="18" />
+    <!-- Donut Segment (38.4% of 364.4 circumference = ~140 stroke-dasharray) -->
+    <circle cx="0" cy="0" r="58" fill="none" stroke="#F59E0B" stroke-width="18"
+            stroke-dasharray="140 225" stroke-dashoffset="65" stroke-linecap="butt" />
+    <text x="0" y="5" class="stat-pct">38.4%</text>
+    <text x="0" y="25" class="stat-sub">SURVIVED</text>
+  </g>
+
+  <line x1="280" y1="40" x2="280" y2="230" stroke="#E5E7EB" stroke-width="1" />
+
+  <!-- COLUMN 2: Survival By Class Bars -->
+  <g transform="translate(315, 60)">
+    <text x="0" y="12" class="section-heading">SURVIVAL BY CLASS</text>
+
+    <!-- Bar 1: First Class (63%) -->
+    <g transform="translate(0, 30)">
+      <rect x="0" y="0" width="180" height="20" fill="#F59E0B" stroke="#111827" stroke-width="1" />
+      <text x="12" y="14" class="bar-label" fill="#111827">FIRST / 63%</text>
+    </g>
+
+    <!-- Bar 2: Second Class (47%) -->
+    <g transform="translate(0, 58)">
+      <rect x="0" y="0" width="134" height="20" fill="#FCD34D" stroke="#111827" stroke-width="1" />
+      <text x="12" y="14" class="bar-label" fill="#111827">SECOND / 47%</text>
+    </g>
+
+    <!-- Bar 3: Third Class (24%) -->
+    <g transform="translate(0, 86)">
+      <rect x="0" y="0" width="68" height="20" fill="#FEF3C7" stroke="#111827" stroke-width="1" />
+      <text x="12" y="14" class="bar-label" fill="#111827">THIRD / 24%</text>
+    </g>
+
+    <text x="0" y="132" class="note-text">Class strongly relates to outcome.</text>
+  </g>
+
+  <line x1="560" y1="40" x2="560" y2="230" stroke="#E5E7EB" stroke-width="1" />
+
+  <!-- COLUMN 3: Analytical Story -->
+  <g transform="translate(595, 60)">
+    <text x="0" y="12" class="section-heading">ANALYTICAL STORY</text>
+
+    <!-- Story 01 -->
+    <rect x="0" y="24" width="280" height="26" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+    <text x="12" y="41" class="story-item">01 / Overall outcome</text>
+
+    <!-- Story 02 -->
+    <rect x="0" y="55" width="280" height="26" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+    <text x="12" y="72" class="story-item">02 / Age and class</text>
+
+    <!-- Story 03 -->
+    <rect x="0" y="86" width="280" height="26" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+    <text x="12" y="103" class="story-item">03 / Gender and family</text>
+
+    <!-- Story 04 (Highlighted Lime) -->
+    <rect x="0" y="117" width="280" height="28" fill="#D4F93B" stroke="#111827" stroke-width="1.5" />
+    <text x="12" y="135" class="story-item" font-weight="700">04 / Combined evidence</text>
+  </g>
+
+  <!-- Footer Axis -->
+  <line x1="10" y1="230" x2="950" y2="230" stroke="#111827" stroke-width="1" />
+  <text x="28" y="244" class="mono-title" font-size="9.5">QUESTION → TRANSFORM → VISUALIZE → INTERPRET</text>
+</svg>
