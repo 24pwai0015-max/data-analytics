@@ -1,112 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 270" width="100%" height="100%">
   <defs>
-    <!-- Background -->
-    <linearGradient id="pipeBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#fefcf7" />
-    </linearGradient>
-
-    <!-- Amber Flow Gradient -->
-    <linearGradient id="amberFlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f59e0b" />
-      <stop offset="50%" stop-color="#d97706" />
-      <stop offset="100%" stop-color="#b45309" />
-    </linearGradient>
-
-    <!-- Drop Shadow -->
-    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="130%">
-      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#b45309" flood-opacity="0.06" />
-    </filter>
-
-    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
+    <style>
+      .mono-title { font-family: 'Consolas', 'Courier New', monospace; font-size: 11px; font-weight: 700; fill: #111827; letter-spacing: 2px; }
+      .cube-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10px; font-weight: 800; fill: #111827; letter-spacing: 0.5px; text-anchor: middle; }
+      .cube-sub { font-family: 'Consolas', 'Courier New', monospace; font-size: 9px; font-weight: 700; fill: #6B7280; letter-spacing: 1px; text-anchor: middle; }
+      .grid-line { stroke: #E5E7EB; stroke-width: 0.8; }
+    </style>
   </defs>
 
-  <style>
-    .step-num { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 700; fill: #b45309; letter-spacing: 1.5px; }
-    .step-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 1px; fill: #0f172a; }
-    .step-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10.5px; fill: #64748b; }
-    @keyframes pulseBeam {
-      0% { stroke-dashoffset: 100; }
-      100% { stroke-dashoffset: 0; }
-    }
-    .flow-line {
-      stroke-dasharray: 6, 6;
-      animation: pulseBeam 1.5s linear infinite;
-    }
-  </style>
-
   <!-- Container Box -->
-  <rect width="900" height="220" rx="14" fill="url(#pipeBg)" stroke="#fde68a" stroke-width="1.2" />
+  <rect x="10" y="10" width="940" height="250" fill="#FFFFFF" stroke="#111827" stroke-width="1.8" />
 
-  <!-- Section Header -->
-  <g transform="translate(30, 30)">
-    <circle cx="6" cy="6" r="4.5" fill="#f59e0b" filter="url(#softGlow)" />
-    <text x="20" y="10.5" font-family="'Fira Code', monospace" font-size="11.5" font-weight="700" fill="#b45309" letter-spacing="2">DATA PIPELINE &amp; ANALYTICS LIFECYCLE</text>
+  <!-- Top Bar -->
+  <line x1="10" y1="42" x2="950" y2="42" stroke="#111827" stroke-width="1" />
+  <text x="28" y="30" class="mono-title">DATA PIPELINE / FIVE-STAGE METHOD</text>
+
+  <!-- Background grid accents -->
+  <line x1="10" y1="180" x2="950" y2="180" class="grid-line" stroke-dasharray="4,4" />
+
+  <!-- CUBE 1: INGEST (Amber) -->
+  <g transform="translate(100, 115)">
+    <!-- Top Face -->
+    <polygon points="0,-32 40,-12 0,8 -40,-12" fill="#FBBF24" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="-10" class="cube-text" fill="#111827">INGEST</text>
+    <!-- Left Face -->
+    <polygon points="-40,-12 0,8 0,48 -40,28" fill="#F59E0B" stroke="#111827" stroke-width="1.5" />
+    <!-- Right Face -->
+    <polygon points="0,8 40,-12 40,28 0,48" fill="#D97706" stroke="#111827" stroke-width="1.5" />
+    <!-- Sublabel -->
+    <text x="0" y="78" class="cube-sub">CSV / EXCEL / API</text>
   </g>
 
-  <!-- Flow Lines Connecting Nodes -->
-  <line x1="175" y1="120" x2="215" y2="120" stroke="url(#amberFlow)" stroke-width="2.2" class="flow-line" filter="url(#softGlow)" />
-  <polygon points="215,116 223,120 215,124" fill="#d97706" />
-
-  <line x1="355" y1="120" x2="395" y2="120" stroke="url(#amberFlow)" stroke-width="2.2" class="flow-line" filter="url(#softGlow)" />
-  <polygon points="395,116 403,120 395,124" fill="#d97706" />
-
-  <line x1="535" y1="120" x2="575" y2="120" stroke="url(#amberFlow)" stroke-width="2.2" class="flow-line" filter="url(#softGlow)" />
-  <polygon points="575,116 583,120 575,124" fill="#d97706" />
-
-  <line x1="715" y1="120" x2="755" y2="120" stroke="url(#amberFlow)" stroke-width="2.2" class="flow-line" filter="url(#softGlow)" />
-  <polygon points="755,116 763,120 755,124" fill="#b45309" />
-
-  <!-- NODE 1: Ingestion -->
-  <g transform="translate(35, 65)">
-    <rect width="140" height="110" rx="10" fill="#ffffff" stroke="#fde68a" stroke-width="1.2" filter="url(#boxShadow)" />
-    <text x="14" y="24" class="step-num">STAGE 01</text>
-    <text x="14" y="46" class="step-title">INGESTION</text>
-    <text x="14" y="68" class="step-desc">• Raw CSVs &amp; APIs</text>
-    <text x="14" y="85" class="step-desc">• Excel Data Sheets</text>
-    <text x="14" y="102" class="step-desc">• Unstructured Web</text>
+  <!-- Arrow 1 -> 2 -->
+  <g transform="translate(195, 130)">
+    <line x1="0" y1="0" x2="45" y2="0" stroke="#111827" stroke-width="1.8" />
+    <polygon points="45,-4 52,0 45,4" fill="#111827" />
   </g>
 
-  <!-- NODE 2: NumPy -->
-  <g transform="translate(215, 65)">
-    <rect width="140" height="110" rx="10" fill="#ffffff" stroke="#fcd34d" stroke-width="1.2" filter="url(#boxShadow)" />
-    <text x="14" y="24" class="step-num">STAGE 02</text>
-    <text x="14" y="46" class="step-title">NUMPY CORE</text>
-    <text x="14" y="68" class="step-desc">• Vectorized Ops</text>
-    <text x="14" y="85" class="step-desc">• Broadcasting</text>
-    <text x="14" y="102" class="step-desc">• Boolean Masking</text>
+  <!-- CUBE 2: COMPUTE (Grey/Silver) -->
+  <g transform="translate(290, 115)">
+    <!-- Top Face -->
+    <polygon points="0,-32 40,-12 0,8 -40,-12" fill="#F3F4F6" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="-10" class="cube-text" fill="#111827">COMPUTE</text>
+    <!-- Left Face -->
+    <polygon points="-40,-12 0,8 0,48 -40,28" fill="#E5E7EB" stroke="#111827" stroke-width="1.5" />
+    <!-- Right Face -->
+    <polygon points="0,8 40,-12 40,28 0,48" fill="#9CA3AF" stroke="#111827" stroke-width="1.5" />
+    <!-- Sublabel -->
+    <text x="0" y="78" class="cube-sub">NUMPY</text>
   </g>
 
-  <!-- NODE 3: Pandas -->
-  <g transform="translate(395, 65)">
-    <rect width="140" height="110" rx="10" fill="#ffffff" stroke="#fbbf24" stroke-width="1.2" filter="url(#boxShadow)" />
-    <text x="14" y="24" class="step-num">STAGE 03</text>
-    <text x="14" y="46" class="step-title">PANDAS WRANGLING</text>
-    <text x="14" y="68" class="step-desc">• Imputation &amp; Cleaning</text>
-    <text x="14" y="85" class="step-desc">• GroupBy &amp; Aggregates</text>
-    <text x="14" y="102" class="step-desc">• Feature Engineering</text>
+  <!-- Arrow 2 -> 3 -->
+  <g transform="translate(385, 130)">
+    <line x1="0" y1="0" x2="45" y2="0" stroke="#111827" stroke-width="1.8" />
+    <polygon points="45,-4 52,0 45,4" fill="#111827" />
   </g>
 
-  <!-- NODE 4: Visualization -->
-  <g transform="translate(575, 65)">
-    <rect width="140" height="110" rx="10" fill="#ffffff" stroke="#f59e0b" stroke-width="1.2" filter="url(#boxShadow)" />
-    <text x="14" y="24" class="step-num">STAGE 04</text>
-    <text x="14" y="46" class="step-title">VISUALIZATION</text>
-    <text x="14" y="68" class="step-desc">• Multi-Panel Figures</text>
-    <text x="14" y="85" class="step-desc">• Seaborn Distributions</text>
-    <text x="14" y="102" class="step-desc">• Categorical Plots</text>
+  <!-- CUBE 3: TRANSFORM (Amber) -->
+  <g transform="translate(480, 115)">
+    <!-- Top Face -->
+    <polygon points="0,-32 40,-12 0,8 -40,-12" fill="#FBBF24" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="-10" class="cube-text" fill="#111827">TRANSFORM</text>
+    <!-- Left Face -->
+    <polygon points="-40,-12 0,8 0,48 -40,28" fill="#F59E0B" stroke="#111827" stroke-width="1.5" />
+    <!-- Right Face -->
+    <polygon points="0,8 40,-12 40,28 0,48" fill="#D97706" stroke="#111827" stroke-width="1.5" />
+    <!-- Sublabel -->
+    <text x="0" y="78" class="cube-sub">PANDAS</text>
   </g>
 
-  <!-- NODE 5: Insights -->
-  <g transform="translate(755, 65)">
-    <rect width="110" height="110" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5" filter="url(#boxShadow)" />
-    <text x="12" y="24" class="step-num">STAGE 05</text>
-    <text x="12" y="46" class="step-title" fill="#b45309">INSIGHTS</text>
-    <text x="12" y="68" class="step-desc">• Visual Story</text>
-    <text x="12" y="85" class="step-desc">• Titanic EDA</text>
-    <text x="12" y="102" class="step-desc">• Executive Story</text>
+  <!-- Arrow 3 -> 4 -->
+  <g transform="translate(575, 130)">
+    <line x1="0" y1="0" x2="45" y2="0" stroke="#111827" stroke-width="1.8" />
+    <polygon points="45,-4 52,0 45,4" fill="#111827" />
+  </g>
+
+  <!-- CUBE 4: VISUALIZE (Grey/Silver) -->
+  <g transform="translate(670, 115)">
+    <!-- Top Face -->
+    <polygon points="0,-32 40,-12 0,8 -40,-12" fill="#F3F4F6" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="-10" class="cube-text" fill="#111827">VISUALIZE</text>
+    <!-- Left Face -->
+    <polygon points="-40,-12 0,8 0,48 -40,28" fill="#E5E7EB" stroke="#111827" stroke-width="1.5" />
+    <!-- Right Face -->
+    <polygon points="0,8 40,-12 40,28 0,48" fill="#9CA3AF" stroke="#111827" stroke-width="1.5" />
+    <!-- Sublabel -->
+    <text x="0" y="78" class="cube-sub">MATPLOTLIB / SEABORN</text>
+  </g>
+
+  <!-- Arrow 4 -> 5 -->
+  <g transform="translate(765, 130)">
+    <line x1="0" y1="0" x2="45" y2="0" stroke="#111827" stroke-width="1.8" />
+    <polygon points="45,-4 52,0 45,4" fill="#111827" />
+  </g>
+
+  <!-- CUBE 5: EXPLAIN (Vibrant Lime) -->
+  <g transform="translate(860, 115)">
+    <!-- Top Face -->
+    <polygon points="0,-32 40,-12 0,8 -40,-12" fill="#D4F93B" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="-10" class="cube-text" fill="#111827">EXPLAIN</text>
+    <!-- Left Face -->
+    <polygon points="-40,-12 0,8 0,48 -40,28" fill="#A3E635" stroke="#111827" stroke-width="1.5" />
+    <!-- Right Face -->
+    <polygon points="0,8 40,-12 40,28 0,48" fill="#65A30D" stroke="#111827" stroke-width="1.5" />
+    <!-- Sublabel -->
+    <text x="0" y="78" class="cube-sub">EVIDENCE</text>
   </g>
 </svg>

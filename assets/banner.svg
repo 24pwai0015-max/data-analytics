@@ -1,181 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="100%" height="100%">
   <defs>
-    <!-- Light Amber & White Luxury Background Gradient -->
-    <linearGradient id="lightBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="50%" stop-color="#fefcf7" />
-      <stop offset="100%" stop-color="#fff8ed" />
-    </linearGradient>
-
-    <!-- Light Amber Animated Voltage Gradient -->
-    <linearGradient id="amberVoltage" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f59e0b">
-        <animate attributeName="stop-color" values="#f59e0b;#d97706;#fbbf24;#f59e0b" dur="5s" repeatCount="indefinite" />
-      </stop>
-      <stop offset="50%" stop-color="#d97706">
-        <animate attributeName="stop-color" values="#d97706;#fbbf24;#f59e0b;#d97706" dur="5s" repeatCount="indefinite" />
-      </stop>
-      <stop offset="100%" stop-color="#b45309">
-        <animate attributeName="stop-color" values="#b45309;#f59e0b;#d97706;#b45309" dur="5s" repeatCount="indefinite" />
-      </stop>
-    </linearGradient>
-
-    <!-- Subtle Warm Gold Radial Glows -->
-    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    <style>
+      .mono-label { font-family: 'Consolas', monospace; font-size: 12px; font-weight: 700; fill: #111827; letter-spacing: 2px; }
+      .hero-solid { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 48px; font-weight: 900; fill: #111827; letter-spacing: 1px; }
+      .hero-outline { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 48px; font-weight: 900; fill: none; stroke: #111827; stroke-width: 2px; letter-spacing: 1px; }
+      .tag-sub { font-family: 'Consolas', monospace; font-size: 11px; font-weight: 600; fill: #64748B; letter-spacing: 1px; }
+      .tag-amber { font-family: 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #D97706; letter-spacing: 1px; }
+      .cube-label { font-family: 'Consolas', monospace; font-size: 13px; font-weight: 700; fill: #111827; }
+    </style>
+    <radialGradient id="sunAura" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="35%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
     </radialGradient>
-
-    <!-- Warm Amber Glow Filter -->
-    <filter id="amberGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-
-    <!-- Crisp Minimalist Grid Pattern -->
-    <pattern id="lightGrid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#f1f5f9" stroke-width="0.8" />
-      <circle cx="32" cy="32" r="1.2" fill="#fde68a" fill-opacity="0.8" />
-    </pattern>
-
-    <!-- Soft Drop Shadow for Cards -->
-    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#b45309" flood-opacity="0.08" />
-    </filter>
+    <radialGradient id="darkPlanet" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#4B5563" />
+      <stop offset="60%" stop-color="#1F242E" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </radialGradient>
   </defs>
 
-  <style>
-    .title {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 900;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      fill: #0f172a;
-    }
-    .subtitle {
-      font-family: 'Fira Code', 'Courier New', Courier, monospace;
-      font-size: 13.5px;
-      letter-spacing: 2px;
-      font-weight: 600;
-      fill: #78350f;
-    }
-    .chip {
-      font-family: 'Fira Code', monospace;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-    @keyframes floatBeam {
-      0% { stroke-dashoffset: 600; }
-      100% { stroke-dashoffset: 0; }
-    }
-    .beam {
-      stroke-dasharray: 140, 260;
-      animation: floatBeam 4.5s linear infinite;
-    }
-    .beam-reverse {
-      stroke-dasharray: 90, 220;
-      animation: floatBeam 5.5s linear infinite reverse;
-    }
-  </style>
+  <!-- Technical Canvas -->
+  <rect x="18" y="18" width="964" height="324" fill="#FFFFFF" stroke="#111827" stroke-width="2" />
 
-  <!-- Background Base -->
-  <rect width="960" height="280" rx="16" fill="url(#lightBg)" />
-  <rect width="960" height="280" rx="16" fill="url(#lightGrid)" />
+  <!-- Top Bar -->
+  <line x1="18" y1="52" x2="982" y2="52" stroke="#111827" stroke-width="1" />
+  <text x="36" y="42" class="mono-label">DATA LAB / 001</text>
+  <text x="800" y="42" class="mono-label">SCIENTIFIC COMPUTING</text>
 
-  <!-- Warm Ambient Glow Orbs -->
-  <circle cx="150" cy="80" r="140" fill="url(#sunGlow)" />
-  <circle cx="820" cy="180" r="160" fill="url(#sunGlow)" />
-  <circle cx="480" cy="140" r="100" fill="url(#sunGlow)" />
-
-  <!-- Outer Elegant Amber Border -->
-  <rect width="956" height="276" x="2" y="2" rx="15" fill="none" stroke="url(#amberVoltage)" stroke-width="1.8" stroke-opacity="0.8" />
-
-  <!-- Animated Kinetic Energy Waves -->
-  <path d="M 0 220 Q 240 180, 480 230 T 960 190" fill="none" stroke="#fde68a" stroke-width="1.5" stroke-opacity="0.5" />
-  <path d="M 0 220 Q 240 180, 480 230 T 960 190" fill="none" stroke="url(#amberVoltage)" stroke-width="2.5" class="beam" filter="url(#amberGlow)" />
-
-  <path d="M 0 70 Q 300 120, 600 60 T 960 100" fill="none" stroke="#fef3c7" stroke-width="1.2" stroke-opacity="0.6" />
-  <path d="M 0 70 Q 300 120, 600 60 T 960 100" fill="none" stroke="url(#amberVoltage)" stroke-width="2" class="beam-reverse" filter="url(#amberGlow)" />
-
-  <!-- Top Status Pill -->
-  <g transform="translate(360, 24)">
-    <rect width="240" height="28" rx="14" fill="#ffffff" stroke="#f59e0b" stroke-width="1.2" filter="url(#cardShadow)" />
-    <circle cx="18" cy="14" r="4.5" fill="#f59e0b">
-      <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite" />
-    </circle>
-    <text x="32" y="18.5" fill="#b45309" font-family="'Fira Code', monospace" font-size="10.5" font-weight="700" letter-spacing="2">HIGH-VOLTAGE ANALYTICS</text>
+  <!-- Technical Grid Background -->
+  <g stroke="#F3F4F6" stroke-width="1">
+    <line x1="480" y1="53" x2="480" y2="341" /><line x1="530" y1="53" x2="530" y2="341" />
+    <line x1="580" y1="53" x2="580" y2="341" /><line x1="630" y1="53" x2="630" y2="341" />
+    <line x1="680" y1="53" x2="680" y2="341" /><line x1="730" y1="53" x2="730" y2="341" />
+    <line x1="780" y1="53" x2="780" y2="341" /><line x1="830" y1="53" x2="830" y2="341" />
+    <line x1="880" y1="53" x2="880" y2="341" /><line x1="930" y1="53" x2="930" y2="341" />
+    <line x1="480" y1="100" x2="981" y2="100" /><line x1="480" y1="150" x2="981" y2="150" />
+    <line x1="480" y1="200" x2="981" y2="200" /><line x1="480" y1="250" x2="981" y2="250" />
+    <line x1="480" y1="300" x2="981" y2="300" />
   </g>
 
-  <!-- Main Hero Title -->
-  <text x="480" y="112" text-anchor="middle" class="title" font-size="33">
-    DATA ANALYTICS <tspan fill="url(#amberVoltage)">&amp;</tspan> VISUAL STORYTELLING
-  </text>
+  <!-- Typography Left -->
+  <text x="50" y="112" class="hero-solid">DATA</text>
+  <text x="50" y="167" class="hero-solid">ANALYTICS</text>
+  <text x="50" y="222" class="hero-outline">LABORATORY</text>
+  <text x="52" y="270" class="tag-sub">NUMPY • PANDAS • MATPLOTLIB • SEABORN</text>
+  <text x="52" y="292" class="tag-amber">VECTORIZED PIPELINES &amp; STATISTICAL STORYTELLING</text>
 
-  <!-- Tagline Subtitle -->
-  <text x="480" y="148" text-anchor="middle" class="subtitle">
-    EXPLORATORY DATA ANALYSIS • VECTORIZED PIPELINES • STATISTICAL INSIGHTS
-  </text>
+  <!-- Right Side Celestial Body & Orbit -->
+  <g transform="translate(740, 180)">
+    <!-- Back of Orbit Ring -->
+    <ellipse cx="0" cy="0" rx="150" ry="48" fill="none" stroke="#C4B5FD" stroke-opacity="0.3" stroke-width="2" transform="rotate(-16)" />
 
-  <!-- Golden Divider with Center Spark -->
-  <g transform="translate(180, 168)">
-    <line x1="0" y1="0" x2="600" y2="0" stroke="#fde68a" stroke-width="1.2" />
-    <line x1="180" y1="0" x2="420" y2="0" stroke="url(#amberVoltage)" stroke-width="2.2" filter="url(#amberGlow)">
-      <animate attributeName="x1" values="60;280;60" dur="4s" repeatCount="indefinite" />
-      <animate attributeName="x2" values="320;540;320" dur="4s" repeatCount="indefinite" />
-    </line>
-    <polygon points="300,-9 294,1 299,1 295,9 306,-1 301,-1" fill="#f59e0b" filter="url(#amberGlow)">
-      <animate attributeName="fill" values="#f59e0b;#d97706;#fbbf24;#f59e0b" dur="3s" repeatCount="indefinite" />
-    </polygon>
-  </g>
+    <!-- Dark Shaded Planet Sphere -->
+    <circle cx="0" cy="0" r="82" fill="url(#darkPlanet)" stroke="#111827" stroke-width="1.8" />
 
-  <!-- Tech Stack Chips (Light Amber & Crisp White) -->
-  <g transform="translate(105, 198)">
-    <!-- Chip 1: NumPy -->
-    <g transform="translate(0, 0)">
-      <rect width="130" height="34" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="1.2" filter="url(#cardShadow)" />
-      <circle cx="16" cy="17" r="4.5" fill="#f59e0b" />
-      <text x="28" y="21.5" fill="#0f172a" class="chip">NUMPY</text>
-      <text x="85" y="21.5" fill="#94a3b8" class="chip" font-size="9">W01</text>
+    <!-- Glowing Sun / Star Inside -->
+    <circle cx="-24" cy="-14" r="34" fill="url(#sunAura)" />
+
+    <!-- Front Orbit Ring -->
+    <path d="M -144 42 A 150 48 0 0 0 144 -42" fill="none" stroke="#D1D5DB" stroke-width="2" transform="rotate(-16)" />
+
+    <!-- Orbiting Satellite Beacon -->
+    <g transform="translate(138, -38)">
+      <circle cx="0" cy="0" r="10" fill="#D4F93B" fill-opacity="0.5" />
+      <circle cx="0" cy="0" r="6" fill="#A3E635" stroke="#111827" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="2" fill="#FFFFFF" />
     </g>
 
-    <!-- Chip 2: Pandas -->
-    <g transform="translate(150, 0)">
-      <rect width="135" height="34" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="1.2" filter="url(#cardShadow)" />
-      <circle cx="16" cy="17" r="4.5" fill="#d97706" />
-      <text x="28" y="21.5" fill="#0f172a" class="chip">PANDAS</text>
-      <text x="92" y="21.5" fill="#94a3b8" class="chip" font-size="9">W02-04</text>
+    <!-- Isometric Blue Cube -->
+    <g transform="translate(-120, 76)">
+      <!-- Top -->
+      <polygon points="0,-24 21,-12 0,0 -21,-12" fill="#60A5FA" stroke="#111827" stroke-width="1.2" />
+      <!-- Left -->
+      <polygon points="-21,-12 0,0 0,24 -21,12" fill="#2563EB" stroke="#111827" stroke-width="1.2" />
+      <!-- Right -->
+      <polygon points="0,0 21,-12 21,12 0,24" fill="#1D4ED8" stroke="#111827" stroke-width="1.2" />
+      <!-- Label NU | -->
+      <text x="30" y="6" class="cube-label">NU |</text>
     </g>
-
-    <!-- Chip 3: Matplotlib -->
-    <g transform="translate(305, 0)">
-      <rect width="145" height="34" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.2" filter="url(#cardShadow)" />
-      <circle cx="16" cy="17" r="4.5" fill="#b45309" />
-      <text x="28" y="21.5" fill="#0f172a" class="chip">MATPLOTLIB</text>
-      <text x="114" y="21.5" fill="#94a3b8" class="chip" font-size="9">W05</text>
-    </g>
-
-    <!-- Chip 4: Seaborn -->
-    <g transform="translate(470, 0)">
-      <rect width="130" height="34" rx="8" fill="#ffffff" stroke="#f59e0b" stroke-width="1.2" filter="url(#cardShadow)" />
-      <circle cx="16" cy="17" r="4.5" fill="#f59e0b" />
-      <text x="28" y="21.5" fill="#0f172a" class="chip">SEABORN</text>
-      <text x="94" y="21.5" fill="#94a3b8" class="chip" font-size="9">W05</text>
-    </g>
-
-    <!-- Chip 5: Case Study -->
-    <g transform="translate(620, 0)">
-      <rect width="130" height="34" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5" filter="url(#cardShadow)" />
-      <circle cx="16" cy="17" r="4.5" fill="#d97706" />
-      <text x="28" y="21.5" fill="#b45309" class="chip">TITANIC</text>
-      <text x="95" y="21.5" fill="#f59e0b" class="chip" font-size="9">EDA ⚡</text>
-    </g>
-  </g>
-
-  <!-- Bottom Elegant Tagline -->
-  <g transform="translate(480, 258)">
-    <text text-anchor="middle" font-family="'Fira Code', monospace" font-size="9.5" fill="#94a3b8" letter-spacing="3">
-      ⚡ PROFESSIONAL PRODUCTION-READY WORKSPACE &amp; ARCHITECTED ROADMAP ⚡
-    </text>
   </g>
 </svg>

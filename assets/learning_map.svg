@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 180" width="100%" height="100%">
+  <defs>
+    <style>
+      .mono-title { font-family: 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #111827; letter-spacing: 2px; }
+      .stage-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 800; fill: #111827; letter-spacing: 1px; text-anchor: middle; }
+      .stage-sub { font-family: 'Consolas', monospace; font-size: 9.5px; font-weight: 600; fill: #6B7280; letter-spacing: 1px; text-anchor: middle; }
+      .node-num { font-family: 'Consolas', monospace; font-size: 11px; font-weight: 700; fill: #111827; text-anchor: middle; dominant-baseline: middle; }
+      .footer-flow { font-family: 'Consolas', monospace; font-size: 10px; font-weight: 700; fill: #9CA3AF; letter-spacing: 2px; }
+    </style>
+  </defs>
+
+  <!-- Container Box -->
+  <rect x="10" y="10" width="940" height="160" fill="#FFFFFF" stroke="#111827" stroke-width="1.8" />
+
+  <!-- Top Bar -->
+  <line x1="10" y1="40" x2="950" y2="40" stroke="#111827" stroke-width="1" />
+  <text x="28" y="28" class="mono-title">LEARNING MAP / FOUNDATION TO STORY</text>
+
+  <!-- Timeline connecting line -->
+  <line x1="120" y1="95" x2="840" y2="95" stroke="#111827" stroke-width="1.5" />
+
+  <!-- STAGE 1: NUMPY -->
+  <g transform="translate(120, 0)">
+    <text x="0" y="66" class="stage-title">NUMPY</text>
+    <circle cx="0" cy="95" r="14" fill="#F59E0B" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="96" class="node-num">1</text>
+    <text x="0" y="125" class="stage-sub">ARRAYS</text>
+  </g>
+
+  <!-- STAGE 2: PANDAS -->
+  <g transform="translate(300, 0)">
+    <text x="0" y="66" class="stage-title">PANDAS</text>
+    <circle cx="0" cy="95" r="14" fill="#FFFFFF" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="96" class="node-num">2</text>
+    <text x="0" y="125" class="stage-sub">CLEANING</text>
+  </g>
+
+  <!-- STAGE 3: GROUPBY -->
+  <g transform="translate(480, 0)">
+    <text x="0" y="66" class="stage-title">GROUPBY</text>
+    <circle cx="0" cy="95" r="14" fill="#F59E0B" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="96" class="node-num">3</text>
+    <text x="0" y="125" class="stage-sub">AGGREGATION</text>
+  </g>
+
+  <!-- STAGE 4: DATASETS -->
+  <g transform="translate(660, 0)">
+    <text x="0" y="66" class="stage-title">DATASETS</text>
+    <circle cx="0" cy="95" r="14" fill="#FFFFFF" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="96" class="node-num">4</text>
+    <text x="0" y="125" class="stage-sub">INTEGRATION</text>
+  </g>
+
+  <!-- STAGE 5: VISUALS -->
+  <g transform="translate(840, 0)">
+    <text x="0" y="66" class="stage-title">VISUALS</text>
+    <circle cx="0" cy="95" r="14" fill="#D4F93B" stroke="#111827" stroke-width="1.5" />
+    <text x="0" y="96" class="node-num">5</text>
+    <text x="0" y="125" class="stage-sub">STORY</text>
+  </g>
+
+  <!-- Footer Flow Text -->
+  <line x1="10" y1="145" x2="950" y2="145" stroke="#E5E7EB" stroke-width="1" />
+  <text x="28" y="157" class="footer-flow">COMPUTE → CLEAN → SUMMARIZE → CONNECT → COMMUNICATE</text>
+</svg>
