@@ -109,17 +109,66 @@ print("null value analysis:\n",country_null)
 print(df["country"].unique())
 print(df['country'].where(df["country"]=='United States').value_counts())
 print(df["country"].unique())
+# we have to select unknown,because mode extarct repitative feature,so the saturated feature will appear in very large
+# amount and will dominate other country names,so according to me no mode for today task,the proof is,i have checked the unitaed states ,
+# which was 2k plus in the dataset
+df["country"]=df["country"].fillna('unknown')
+print("null analysis after fillna:\n",df["country"].isnull().sum())
+print(
+    "Analysis of unknown rows:\n",
+    df[df["country"] == "unknown"].head(51)
+    
+)
+print("*" * 50)
 # United States    2555
 
 
 
 # 5. rating (7 missing) and date_added (10 missing):
 #    look at the affected rows first, then decide how to handle them.
-
+print("rating column analysis:\n",df["rating"].head(21))
+print("null value analysis:\n",df["rating"].isnull().sum())
+print("value counts column analysis:\n",df["rating"].value_counts())
+# print("top 3 ratings:\n",df["rating"].sort_values())
+print(df[df['rating'].isnull()][['title', 'type', 'release_year']])
+# rating: 7 missing values, spanning both Movies and TV Shows,
+# no clear pattern by year or genre (documentaries, comedy specials, anime).
+# Decision: fillna with 'Not Rated' — keeps rows intact for other
+# analyses, and 'Not Rated' is a realistic real-world category
+# for unrated content like specials/documentaries.
+df['rating'] = df['rating'].fillna('Not Rated')
+print("*" * 50)
 # 6. Convert date_added to datetime.
 #    Then create two new columns: year_added and month_added.
+print("analysis of date_added:\n",df['date_added'].head(21))
+print(df["date_added"].isnull().sum())
+df["date_added"]=pd.to_datetime(df["date_added"].str.strip())
+print("datatype confirmation:\n",df["date_added"].dtype)
+
+print("analysis of date_added:\n", df['date_added'].head(21))
+print("Nulls before filling:", df["date_added"].isnull().sum())
+
+# Correct way to impute nulls with the mode
+mode_date = df["date_added"].mode()[0]
+df["date_added"] = df["date_added"].fillna(mode_date)
+
+print("Nulls after filling:", df["date_added"].isnull().sum())
+print("datatype confirmation:\n", df["date_added"].dtype)
+print("done successfully")
+print("*" * 50)
+      
 
 # 7. Split duration into two columns:
+# the rule:
+        #    first we will analyse the series,the we will decide what to do
+print("series data analysis using head(21):\n",df["duration"].head(21))
+# deep dive
+print("intial analysis of duration series:\n",df['duration'].agg(['max','min','count']))
+print("types of features it has:\n",df["duration"].str.split().str[-1].value_counts())
+# after running this specific line of code above,we found an issue ,with spellings,check the outputs,ll know:
+correction=df["duration"].str.split().str[-1].str.rstrip('s')
+print("final value counts:\n",correction.value_counts())
+
 #    - duration_min (Movies only)
 #    - seasons (TV Shows only)
 #    Verify: Movies should have NaN in seasons, TV Shows NaN in duration_min.
