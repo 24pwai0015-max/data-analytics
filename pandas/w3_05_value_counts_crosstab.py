@@ -132,7 +132,7 @@ print(pd.crosstab(df['Class'],df['Gender'],margins=True))
 
 # 9. crosstab of Class vs Gender — show average Math score (values + aggfunc)
 print(pd.crosstab(df['Class'],df['Gender'],
-                  values='Math',
+                  values=df['Math'],
                   aggfunc='mean'))
 # BONUS: Load Titanic and:
 # 10. value_counts() on Pclass, Sex, Embarked columns

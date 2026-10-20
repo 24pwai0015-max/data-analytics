@@ -106,7 +106,7 @@ print(filled)
 # Step 6 — Forward Fill and Backward Fill
 
 # ffill — fill missing value with PREVIOUS value
-df['Math']=df['Math'].fillna(Method='ffill')
+df['Math'] = df['Math'].ffill()
 print(df)
 
 # ffill — fill missing value with PREVIOUS value
