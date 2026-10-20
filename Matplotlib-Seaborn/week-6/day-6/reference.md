@@ -72,3 +72,4 @@ df[(df['type'] == 'Movie') & (df['release_year'] > 2015)]
 > target_countries = ['Japan', 'India', 'South Korea']
 > df.query("country in @target_countries")
 > ```
+
