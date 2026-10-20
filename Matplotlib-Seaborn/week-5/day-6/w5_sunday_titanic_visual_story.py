@@ -13,8 +13,16 @@ sns.set_style('whitegrid')
 # SECTION 1: LOAD + SAVE OFFLINE COPY
 # =====================================================
 
-df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
-df.to_csv("titanic_raw.csv", index=False)
+from pathlib import Path
+DATA_DIR = Path(__file__).resolve().parents[3] / "data"
+raw_csv = DATA_DIR / "titanic_raw.csv"
+try:
+    df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
+    df.to_csv(raw_csv, index=False)
+except Exception:
+    df = pd.read_csv(raw_csv)
+# 
+
 print("Saved successfully!")
 print("Shape:", df.shape)
 

@@ -169,9 +169,12 @@ plt.show()
 # TASK 6 — BONUS: Titanic 2x2 Dashboard
 # =====================================================
 
-titanic = pd.read_csv(
-    'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
-)
+from pathlib import Path
+DATA_DIR = Path(__file__).resolve().parents[3] / "data"
+try:
+    titanic = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
+except Exception:
+    titanic = pd.read_csv(DATA_DIR / 'titanic_raw.csv')
 
 # Fixed fillna — new pandas style
 titanic['Age'] = titanic['Age'].fillna(titanic['Age'].median())

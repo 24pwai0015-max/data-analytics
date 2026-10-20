@@ -170,7 +170,12 @@ print("task 8")
 
 import pandas as pd
 
-titanic = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
+from pathlib import Path
+DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+try:
+    titanic = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
+except Exception:
+    titanic = pd.read_csv(DATA_DIR / 'titanic_raw.csv')
 
 # Check original shape
 print("Original shape:", titanic.shape)

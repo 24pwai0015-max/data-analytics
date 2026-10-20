@@ -11,9 +11,13 @@ import matplotlib.pyplot as plt
 # SECTION 1: Load & Inspect
 # =====================================================
 
-df = pd.read_csv(
-    "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
-)
+from pathlib import Path
+DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+
+try:
+    df = pd.read_csv("https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv")
+except Exception:
+    df = pd.read_csv(DATA_DIR / "titanic_raw.csv")
 
 print("=" * 50)
 print("Dataset Shape")
@@ -319,6 +323,6 @@ print("\nVisualization saved as titanic_eda.png")
 # SECTION 7: Save
 # =====================================================
 
-df.to_csv("titanic_cleaned.csv", index=False)
+df.to_csv(DATA_DIR / "titanic_cleaned.csv", index=False)
 print("\nCleaned dataset saved successfully!")
 print("Final Shape:", df.shape)

@@ -21,9 +21,12 @@ import numpy as np
 # 1. Load data
 # =====================================================
 
-df = pd.read_csv(
-    'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
-)
+from pathlib import Path
+DATA_DIR = Path(__file__).resolve().parents[1] / "data"
+try:
+    df = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
+except Exception:
+    df = pd.read_csv(DATA_DIR / 'titanic_raw.csv')
 
 # =====================================================
 # 2. Drop unneeded columns

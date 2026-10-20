@@ -12,11 +12,8 @@ try:
         'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
     )
 except Exception:
-    local_csv = Path(__file__).resolve().parents[3] / 'titanic_cleaned.csv'
-    if local_csv.exists():
-        titanic = pd.read_csv(local_csv)
-    else:
-        titanic = pd.read_csv('titanic_cleaned.csv')
+    local_csv = Path(__file__).resolve().parents[3] / 'data' / 'titanic_cleaned.csv'
+    titanic = pd.read_csv(local_csv)
 
 # Continuous numerical imputation using median
 titanic['Age'] = titanic['Age'].fillna(titanic['Age'].median())

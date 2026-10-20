@@ -164,7 +164,9 @@ Save as data.csv — that's it. A real CSV file.'''
 # Reading CSV in Pandas
 import pandas as pd
 
-df = pd.read_csv('data.csv')
+from pathlib import Path
+DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "data.csv"
+df = pd.read_csv(DATA_PATH)
 print(df)
 '''Output:
     Name  Age      City

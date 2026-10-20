@@ -1,3 +1,4 @@
+from pathlib import Path
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -9,7 +10,8 @@ try:
         'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
     )
 except Exception:
-    titanic = pd.read_csv('titanic_cleaned.csv')
+    local_csv = Path(__file__).resolve().parents[3] / "data" / "titanic_cleaned.csv"
+    titanic = pd.read_csv(local_csv)
 
 # Handle missing values
 titanic['Age'] = titanic['Age'].fillna(titanic['Age'].median())

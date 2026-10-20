@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -6,7 +7,8 @@ import seaborn as sns
 # 1. LOAD THE DATA
 # -------------------------------------------------------------------
 print("Loading data...")
-df = pd.read_csv('netflix_raw.csv', encoding='latin-1')
+DATA_PATH = Path(__file__).resolve().parents[3] / "data" / "netflix_raw.csv"
+df = pd.read_csv(DATA_PATH, encoding='latin-1')
 
 # -------------------------------------------------------------------
 # 2. DATA CLEANING & FEATURE ENGINEERING

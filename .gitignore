@@ -1,9 +1,26 @@
-*venv*/
-**/venv/
+# Virtual Environment
+venv/
+.venv/
+*/venv/
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-.env
-data.csv
-data.xlsx
-*.ipynb_checkpoints/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# VS Code configuration
+.vscode/
+
+# Environment files
+.env
+*.env
+
+# Generated outputs
+outputs/
+
+# Scratch & experimental files
+scratch/
