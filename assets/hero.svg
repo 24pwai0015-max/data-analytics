@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1000" height="360" viewBox="0 0 1000 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+<svg width="1000" height="360" viewBox="0 0 1000 360" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="title">
   <title id="title">Arsalan – Data analyst in the making → Agent Automation Developer</title>
   <style>
     .bg { fill: transparent; }
     .accent { stroke: #00D9FF; stroke-width: 3; fill: none; }
     .dot { fill: #00D9FF; }
     @media (prefers-reduced-motion: reduce) {
-      .line, .dot { animation: none; }
+      * { animation: none; }
     }
   </style>
   <rect class="bg" width="100%" height="100%"/>
-  <!-- Simple line chart that draws itself -->
-  <polyline class="accent" points="100,300 250,200 400,250 550,150 700,180 850,100 1000,120">
-    <animate attributeName="stroke-dasharray" from="0,2000" to="2000,0" dur="6s" repeatCount="indefinite"/>
-  </polyline>
-  <!-- Drifting data‑point circles -->
-  <circle class="dot" cx="100" cy="300" r="5">
-    <animate attributeName="cx" values="100;200;300;400;500;600;700;800;900;1000" dur="12s" repeatCount="indefinite"/>
-    <animate attributeName="cy" values="300;250;200;250;180;120;150;200;250;300" dur="12s" repeatCount="indefinite"/>
+
+  <!-- Complete line path (draws fully first) -->
+  <path id="linePath" class="accent" d="M100,300 L250,200 L400,250 L550,150 L700,180 L850,100 L1000,120"/>
+
+  <!-- Draw the line: starts empty, fills completely -->
+  <animate id="drawLine"
+           xlink:href="#linePath"
+           attributeName="stroke-dasharray"
+           from="0,2000" to="2000,0"
+           dur="3s"
+           fill="freeze"
+           begin="0s;ballMove.end" />
+
+  <!-- Ball that climbs the drawn curve -->
+  <circle id="ball" class="dot" r="5">
+    <animateMotion id="ballMove"
+                    dur="4s"
+                    begin="drawLine.end"
+                    repeatCount="indefinite">
+      <mpath xlink:href="#linePath"/>
+    </animateMotion>
   </circle>
+
   <!-- Text labels -->
   <text x="20" y="40" font-family="ui-monospace, 'SF Mono', Consolas, 'Segoe UI', sans-serif" font-size="32" fill="#00D9FF">Arsalan</text>
   <text x="20" y="80" font-family="ui-monospace, 'SF Mono', Consolas, 'Segoe UI', sans-serif" font-size="20" fill="#9BA5B4">Data analyst in the making → Agent Automation Developer</text>
