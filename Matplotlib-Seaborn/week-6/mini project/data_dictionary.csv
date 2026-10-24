@@ -1,0 +1,20 @@
+,Meaning,Category,Problem
+Name,Restaurant name,Text / Identifier,Different restaurants may share the same name
+URL,Restaurant webpage URL,Identifier / URL,Check URL validity if required
+Cuisines,Cuisines offered by the restaurant,Multi-value Text,One restaurant may list multiple cuisines
+Area,Area or locality of the restaurant,Category,Check repeated names across different areas
+Timing,Restaurant opening and closing timings,Text,Many missing values; format may vary
+Full_Address,Full restaurant address,Text,Check formatting consistency if required
+PhoneNumber,Restaurant contact number,Identifier / Text,Check formatting; phone numbers are not quantities
+IsHomeDelivery,Home delivery availability,Category / Boolean-like,Inspect distinct values and consistency
+isTakeaway,Takeaway availability,Category / Boolean-like,Inspect distinct values and consistency
+isIndoorSeating,Indoor seating availability,Category / Boolean-like,Inspect distinct values and consistency
+isVegOnly,Whether the restaurant is vegetarian-only,Category / Boolean-like,Inspect distinct values and consistency
+Dinner Ratings,Dinner rating,Numeric-like Text,Contains '-' placeholders; stored as strings
+Dinner Reviews,Number of dinner reviews,Integer,Check whether zero means no reviews
+Delivery Ratings,Delivery rating,Numeric-like Text,Contains '-' placeholders; stored as strings
+Delivery Reviews,Number of delivery reviews,Integer,Check whether zero means no reviews
+KnownFor,Things the restaurant is known for,Text,97.11% missing values
+PopularDishes,Popular dishes at the restaurant,Text / Multi-value,82.80% missing values
+PeopleKnownFor,Information about what people know the restaurant for,Text,60.95% missing values
+AverageCost,Average cost associated with the restaurant,Integer,"Check range, units, and unusual values"

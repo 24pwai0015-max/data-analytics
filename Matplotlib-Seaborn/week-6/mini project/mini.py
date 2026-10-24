@@ -226,6 +226,7 @@ for column, details in data_dictionary.items():
 print("\nActual finding:")
 print("Data dictionary prepared for all 19 columns.")
 print("Suspected problems must be verified before cleaning.")
+pd.DataFrame(data_dictionary, index=["Meaning", "Category", "Problem"]).T.to_csv("data_dictionary.csv")
 
 
 # ------------------------------------------------------------
@@ -471,3 +472,69 @@ print("Repeated Name + Area occurrences:",
 
 print("\nDay 1 inspection completed.")
 print("No cleaning or data modification was performed.")
+
+# ============================================================
+original_nulls = df.isna().sum()
+
+print("=" * 60)
+print("DAY 2 — CLEANING I: STRUCTURE AND TYPES")
+print("=" * 60)
+original_shape = df.shape
+print("\nOriginal shape:", original_shape)
+print("\nOriginal data types:")
+print(df.dtypes)
+
+print("\nOriginal missing-value counts:")
+print(original_nulls)
+
+# ------------------------------------------------------------
+
+# STEP 1: STANDARDIZE COLUMN NAMES
+
+# ------------------------------------------------------------
+
+'''I expect the original column names to contain spaces,
+
+uppercase letters, or special characters.'''
+
+df.columns=df.columns.str.lower()
+
+df.columns = df.columns.str.replace(r'[^\w]+', '_', regex=True)
+df.columns=df.columns.str.strip('_')
+print(df.columns.duplicated().sum())
+print(df.columns.to_list())
+'''
+DECISION:
+I will standardize column names by converting them to lowercase,
+replacing spaces and punctuation with underscores, and removing
+leading and trailing underscores.
+
+REASON:
+Consistent column names make the dataset easier to work with
+and reduce the need to handle different naming styles.
+
+VALIDATION:
+I will check for duplicate column names after standardization.
+If duplicates exist, I will investigate them before deciding
+how to handle them.
+'''
+
+
+# ------------------------------------------------------------
+
+# STEP 2: STRIP WHITESPACE FROM TEXT COLUMNS
+
+# ------------------------------------------------------------
+
+'''
+PREDICTION:
+Some text values may contain leading or trailing spaces,
+
+which could create false categories or affect filtering.'''
+
+text_col=df.select_dtypes(include=["string","object"]).columns
+print("text columns:",text_col.to_list())
+
+for col in text_col:
+   df[col]=df[col].str.strip()
+
