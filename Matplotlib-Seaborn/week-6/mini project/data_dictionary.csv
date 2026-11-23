@@ -1,20 +1,20 @@
-,Meaning,Category,Problem
-Name,Restaurant name,Text / Identifier,Different restaurants may share the same name
-URL,Restaurant webpage URL,Identifier / URL,Check URL validity if required
-Cuisines,Cuisines offered by the restaurant,Multi-value Text,One restaurant may list multiple cuisines
-Area,Area or locality of the restaurant,Category,Check repeated names across different areas
-Timing,Restaurant opening and closing timings,Text,Many missing values; format may vary
-Full_Address,Full restaurant address,Text,Check formatting consistency if required
-PhoneNumber,Restaurant contact number,Identifier / Text,Check formatting; phone numbers are not quantities
-IsHomeDelivery,Home delivery availability,Category / Boolean-like,Inspect distinct values and consistency
-isTakeaway,Takeaway availability,Category / Boolean-like,Inspect distinct values and consistency
-isIndoorSeating,Indoor seating availability,Category / Boolean-like,Inspect distinct values and consistency
-isVegOnly,Whether the restaurant is vegetarian-only,Category / Boolean-like,Inspect distinct values and consistency
-Dinner Ratings,Dinner rating,Numeric-like Text,Contains '-' placeholders; stored as strings
-Dinner Reviews,Number of dinner reviews,Integer,Check whether zero means no reviews
-Delivery Ratings,Delivery rating,Numeric-like Text,Contains '-' placeholders; stored as strings
-Delivery Reviews,Number of delivery reviews,Integer,Check whether zero means no reviews
-KnownFor,Things the restaurant is known for,Text,97.11% missing values
-PopularDishes,Popular dishes at the restaurant,Text / Multi-value,82.80% missing values
-PeopleKnownFor,Information about what people know the restaurant for,Text,60.95% missing values
-AverageCost,Average cost associated with the restaurant,Integer,"Check range, units, and unusual values"
+,Meaning,Category,Suspected_Problem
+Name,Restaurant name,Text / Identifier,Different outlets share the same name (chains)
+URL,Restaurant webpage URL,Identifier / URL,Unique web link for each restaurant page
+Cuisines,Cuisines offered by the restaurant,Multi-value Text,Comma-separated list; needs splitting and explosion
+Area,Area or locality of the restaurant,Category,"Contains city suffix like ', Bangalore'; needs cleaning"
+Timing,Restaurant opening and closing timings,Text,34.78% missing values; irregular unstructured text
+Full_Address,Full restaurant address,Text,Detailed physical location; key for deduplication
+PhoneNumber,Restaurant contact number,Identifier / Text,Contains '-' placeholders; not a mathematical number
+IsHomeDelivery,Home delivery availability,Binary Flag (0/1),"Boolean-like indicator (1 = Yes, 0 = No)"
+isTakeaway,Takeaway availability,Binary Flag (0/1),"Boolean-like indicator (1 = Yes, 0 = No)"
+isIndoorSeating,Indoor seating availability,Binary Flag (0/1),"Boolean-like indicator (1 = Yes, 0 = No)"
+isVegOnly,Whether the restaurant is vegetarian-only,Binary Flag (0/1),"Boolean-like indicator (1 = Yes, 0 = No)"
+Dinner Ratings,Dinner rating (out of 5.0),Numeric-like Text,"Stored as object; contains 5,325 '-' placeholders"
+Dinner Reviews,Number of dinner reviews,Integer,Heavily right-skewed; many 0s
+Delivery Ratings,Delivery rating (out of 5.0),Numeric-like Text,"Stored as object; contains 1,131 '-' placeholders"
+Delivery Reviews,Number of delivery reviews,Integer,Heavily right-skewed; primary activity metric
+KnownFor,Highlights the restaurant is known for,Text,97.11% missing; very sparse
+PopularDishes,Signature popular dishes,Text / Multi-value,82.80% missing; sparse free-text
+PeopleKnownFor,Customer impressions and ambience keywords,Text,60.95% missing
+AverageCost,Average cost for two people in INR,Integer,"Numeric; ranges from 50 to 4,200 INR"

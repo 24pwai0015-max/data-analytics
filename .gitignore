@@ -20,7 +20,8 @@ __pycache__/
 *.env
 
 # Generated outputs
-outputs/
+/outputs/
+!**/mini project/outputs/
 
 # Scratch & experimental files
 scratch/
