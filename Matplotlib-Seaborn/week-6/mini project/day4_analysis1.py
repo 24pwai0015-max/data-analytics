@@ -36,8 +36,8 @@ print("[CODE OUTPUT]")
 print(top_10_locations)
 
 print("\n[FINDING]")
-print(f"BTM is the undisputed restaurant hub of Bangalore with {top_10_locations.iloc[0]} outlets,")
-print(f"followed by {top_10_locations.index[1]} ({top_10_locations.iloc[1]}) and {top_10_locations.index[2]} ({top_10_locations.iloc[2]}).")
+print(f"'{top_10_locations.index[0]}' is the undisputed restaurant hub of Bangalore with {top_10_locations.iloc[0]} outlets,")
+print(f"followed by {top_10_locations.index[1]} ({top_10_locations.iloc[1]}), {top_10_locations.index[2]} ({top_10_locations.iloc[2]}), {top_10_locations.index[3]} ({top_10_locations.iloc[3]}), and {top_10_locations.index[4]} ({top_10_locations.iloc[4]}).")
 print("Tech corridors and student rental clusters drive the highest density of eateries.")
 
 

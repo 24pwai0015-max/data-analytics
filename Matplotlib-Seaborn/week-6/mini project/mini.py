@@ -17,6 +17,7 @@ DAYS = [
     ("Day 4: Aggregation, Crosstabs & Pivot Analysis", "day4_analysis1.py"),
     ("Day 5: Filtering, Correlations & Value Outliers", "day5_analysis2.py"),
     ("Day 6: Visualization Dashboards & Story Chart", "day6_visuals.py"),
+    ("Day 7: Audit & Verification of Findings", "day7_verify.py"),
 ]
 
 def run_pipeline():
@@ -27,7 +28,7 @@ def run_pipeline():
 
     for idx, (title, script_name) in enumerate(DAYS, start=1):
         script_path = current_dir / script_name
-        print(f"\n[{idx}/6] EXECUTING: {title} ({script_name})...")
+        print(f"\n[{idx}/7] EXECUTING: {title} ({script_name})...")
         print("-" * 75)
 
         if not script_path.exists():
@@ -41,7 +42,7 @@ def run_pipeline():
             sys.exit(result.returncode)
 
     print("\n" + "=" * 75)
-    print("   ALL 6 COMPUTATIONAL DAYS COMPLETED SUCCESSFULLY!")
+    print("   ALL 7 DAYS COMPLETED & VERIFIED SUCCESSFULLY!")
     print("=" * 75)
     print("\nDeliverables generated in this directory:")
     print("  - data_dictionary.csv       (Data dictionary of 19 original columns)")

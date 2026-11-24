@@ -19,7 +19,7 @@ QUESTION -> INSPECT -> CLEAN -> ENGINEER -> ANALYZE -> VISUALIZE -> COMMUNICATE
 | **Day 4** | `day4_analysis1.py` | Groupby, multi-aggregations, crosstabs, pivot tables | 7 Formatted Question Answers |
 | **Day 5** | `day5_analysis2.py` | Advanced boolean filtering (`isin`, `~`, `str.contains`, `between`), correlations | Best Value, Overrated, Chain Analysis |
 | **Day 6** | `day6_visuals.py` | Subplot dashboards, heatmaps, distributions, and annotated story chart | `outputs/*.png` (3 high-res charts) |
-| **Day 7** | `FINDINGS.md` & `README.md` | Executive synthesis, reflection, and project shipping | Comprehensive Documentation |
+| **Day 7** | `day7_verify.py`, `FINDINGS.md` & `README.md` | Statistical verification audit, executive synthesis, and reflection | 8 Verified Findings & Project Documentation |
 
 ---
 
